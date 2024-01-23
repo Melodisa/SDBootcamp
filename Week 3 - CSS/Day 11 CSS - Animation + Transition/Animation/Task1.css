@@ -1,0 +1,64 @@
+@keyframes move {
+
+    0% {
+
+        top: 0;
+
+        left: 0;
+
+    }
+
+    25% {
+
+        top: 0;
+
+        left: 300px;
+
+    }
+
+    50% {
+
+        top: 300px;
+
+        left: 300px;
+
+    }
+
+    75% {
+
+        left: 0;
+
+        top: 300px;
+
+    }
+
+    100% {
+
+
+
+        top: 0;
+
+        left: 0;
+
+    }
+
+}
+
+
+.square {
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 100px;
+
+    background-color: darkslateblue;
+
+    animation-name: move;
+
+    animation-duration: 3s;
+
+    animation-timing-function: infinite;
+
+}

@@ -1,0 +1,18 @@
+/* Declare variables in the :root selector */
+:root {
+    --darkBlue: #00679a;
+    --orangeYellow: #fb6d00;
+    --spacing: 10px;
+}
+
+article {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--darkBlue);
+    color: var(--orangeYellow);
+    padding: var(--spacing);
+    margin: var(--spacing);
+}
+
+#article2 {
+    --darkBlue: #0f9a00;
+}
