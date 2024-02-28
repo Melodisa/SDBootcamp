@@ -1,6 +1,10 @@
 #import all variables/functions from the connect.py file
 from connect import *
 
+import connect
+
+connect.dbCursor
+
 dbCursor.execute(""" 
 CREATE TABLE "members" (
 	"MemberID"	INTEGER NOT NULL UNIQUE,
