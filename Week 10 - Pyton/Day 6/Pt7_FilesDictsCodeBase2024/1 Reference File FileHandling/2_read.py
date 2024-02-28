@@ -9,7 +9,7 @@
 filePath1 = open('pathtofolder/parthtofile/fileName.txt', 'w') # folder/folder/filename
 filePath1.write("Python Programming")
 filePath1.close()
-#lalal
+
 
 "Further reading"
 # https://www.w3docs.com/snippets/python/how-to-read-a-text-file-into-a-list-or-an-array-with-python.html

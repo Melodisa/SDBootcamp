@@ -2,14 +2,18 @@ import logging
 
 "To Do: Predict, then Run, and then Investigate"
 #different logging methods and severity
-logging.basicConfig(filename=r"folderpath/filename", level=logging.DEBUG) 
+logging.basicConfig(filename=r"Week 10 - Pyton\Day 6\Pt8_ExceptionsCodeBase2024/File2.log", level=logging.DEBUG) 
 
 try:  # attempt to run the indented code block
     num1 = int(input(("Enter your first number: ")))
     num2 = int(input(("Enter your second number: ")))
     answer = num1 / num2
+
     #Output for developer/what the developer see
     logging.info(f"Divided {num1} / {num2} = {answer}")
+
+    #output for user/what the user sees
+    print(f"you have divided {num1} / {num2} = {answer}")
        
 except ZeroDivisionError:  # handles exception if code in try block fails
     #Output for user/what the user see

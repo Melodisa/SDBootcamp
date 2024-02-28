@@ -1,4 +1,4 @@
-import logging
+import logging # import statement is key to tap into logging module
 # objective
 # Import and use the logging module/class
 # Understand and use the severity levels
@@ -24,12 +24,13 @@ object of the class exception will be created when an exception is raised.
 
 #different logging methods and severity
 
-logging.basicConfig(level=logging.DEBUG) #comment to see what logging level will be displayed in the terminal
+logging.basicConfig (filename= r"Week 10 - Pyton\Day 6\Pt8_ExceptionsCodeBase2024/file1.log", level = logging.INFO) #comment to see what logging level will be displayed in the terminal
 logging.critical("Critical")
 logging.error("Error")
 logging.warning("Warning")
 logging.info("Info")
-logging.debug("Debug")
+logging.debug ("Debug")
+
 
 
 
@@ -38,5 +39,7 @@ logging.debug("Debug")
 # Task 1. Change the level from level=logging.DEBUG to logging.INFO, run the code and explain the output from the terminal
 # Task 2. Remove the level=logging.DEBUG or level=logging.INFO, between the parenthesis of logging.basicConfig and run the code and explain the output from the terminal
 
+# task 1: shows INFO:root:Info, the debug message is being logged but it's showing as debug
 
+# task 2: no debug and info showing
 

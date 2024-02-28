@@ -12,9 +12,17 @@ print("dictionary with keys but no values")
 userDetails1 = {"fname": "", "address": "", "interest":"", "age":""}
 print(userDetails1)
 
+
+
 # Use key to add values to dictionary 
 
-userDetails1["fname"] = input("Enter you full name: ")
+#userDetails1["fname"] = input("Enter you full name: ")
+#print(userDetails1)
+
+# create a for loop to add data to dictionary #
+
+for keyVal in userDetails1: # iterate or look through all keys and values
+userDetails1[keyVal] = input (f"Enter the value for {keyVal}: ")
 print(userDetails1)
 
 "Extension"
@@ -28,5 +36,25 @@ print("dictionary with no keys and no values")
 "To Do: Task 2: Create a dictionary with no keys as shown below, then write the input statement to add the keys and values."
 userDetails2 = {}
 print(userDetails2)
+
+numOfkeyVal = int(input("Enter the number of key value pairs: "))
+keyValCount = 0 # counter for the key value pairs
+
+
+# while loop 
+
+while True: 
+    aKey = input("Enter key")
+    aValue = input(f"Enter value for {aKey}: ")
+    userDetails2[aKey] = aValue 
+    keyValCount +=1 #increase value by 1
+    
+    # check if the numOfKeyVal is the same as keyValCount#
+    if keyValCount == numOfkeyVal:
+    break
+print(userDetails2) 
+
+
+
 
 
