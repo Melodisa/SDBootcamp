@@ -2,16 +2,18 @@ from connect import *
 
 def insert_films():
     try:
-        sTitle = input("Enter film title: ")
-        syearReleased = input("Enter the year the film was released: ")
-        sRating = input("Enter the film rating: ")
+        fTitle = input("Enter film title: ")
+        fyearReleased = int(input("Enter the year the film was released: "))
+        fRating = input("Enter the film rating: ")
+        fduration = int(input("The duration of the film"))
+        fgenre = input("The genre of the film")
 
 
-        dbCursor.execute("INSERT INTO tblFilms VALUES(NULL,?,?,?)", (sTitle, syearReleased, sRating))
+        dbCursor.execute("INSERT INTO tblFilms VALUES(NULL,?,?,?,?,?)", (fTitle, fyearReleased, fRating, fduration, fgenre))
 
         dbCon.commit()
 
-        print(f"{sTitle} inserted in the film table ")
+        print(f"{fTitle} inserted in the film table ")
     except sql.OperationalError as e:
         print(f"failed because:  {e}")
 
@@ -21,6 +23,6 @@ def insert_films():
     except sql.Error as er:
         print(f"failed because Error:  {er}")
 if __name__ == "__main__":
-    insert_songs()  
+    insert_films()  
 
 
