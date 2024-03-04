@@ -73,23 +73,32 @@ while mainProgram == True:
                 readfilms.read_films()
             elif film_choice == "5":
                 break
-            
+
     elif mainMenuChoice == "2":
         while True:
             report_choice = report_menu()
             if report_choice == "1":
-                addFilms.insert_films()
+                reports.all_films()
                 pass
             elif report_choice == "2": 
-                deleteFilms.delete_song()
+                reports.genre()
                 pass
             elif report_choice == "3":
-                updatefilms.update_tblFilms()
+                reports.year()
                 pass
             elif report_choice == "4":
-                readfilms.read_films()
+                reports.rating()
             elif report_choice == "5":
                 break
+
+    elif mainMenuChoice == "3":
+        break
+    else:
+        print("Invalid choice!") 
+    if input("do you want to continue?  (yes/no): ").lower() != 'yes':
+        mainProgram = False
+print("Exit...")
+
 
 
 
