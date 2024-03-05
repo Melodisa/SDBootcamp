@@ -83,5 +83,9 @@ def rating():
 
 if __name__ == "__main__":
     all_films()
+    genre()
+    year()
+    rating()
+    
 
 
