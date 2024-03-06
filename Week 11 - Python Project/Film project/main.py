@@ -1,6 +1,6 @@
 import addFilms, readFilms, updateFilms, deleteFilms, reports
 
-def read_file(file_path): #file_path is a parameter/variable
+def read_file(file_path): #file_path serves as a parameter or variable
     try:
         with open(file_path) as readFile:
             rf = readFile.read()
@@ -9,13 +9,12 @@ def read_file(file_path): #file_path is a parameter/variable
         print(f'File not found because: {nf}')
 
 def films_menu():
-    option = 0 #assign the option variable with an integer value 0
-    #see menuOptions.txt for reference. Create a list of string values/elements/items
+    option = 0 # Set the option variable to the integer value of 0
     optionsList = ['1', '2', '3', '4', '5']
-    #call the read file function and assign it to a variable called menuChoices
+    # Invoke the read file function and store the result in a variable named menuChoices.
     menuChoices = read_file("Week 11 - Python Project/Textfiles/Filmmenu.txt")
     
-    #repeat the menu options until the option to exit the menu is entered
+    # Continuously iterate through the menu options until the exit command is inputted.
     while option not in optionsList:
         #print the menuOptions.txt file by calling the variable that holds the read_file function in the print statment
         print(menuChoices)
@@ -31,7 +30,7 @@ def films_menu():
 def report_menu():
     option = 0 
     optionsList = ['1', '2', '3', '4', '5']
-    menuChoices = read_file("Film_Database/Text Files/reportsMenu.txt")
+    menuChoices = read_file("Week 11 - Python Project/Textfiles/Reportmenu.txt")
 
     while option not in optionsList:
         print(menuChoices)
@@ -45,7 +44,7 @@ def report_menu():
 def main_menu():
     option = 0 
     optionsList = ['1', '2', '3']
-    menuChoices = read_file("Film_Database/Text Files/selection.txt")
+    menuChoices = read_file("Week 11 - Python Project/Textfiles/Menuselect.txt")
     
     while option not in optionsList:
         print(menuChoices)
