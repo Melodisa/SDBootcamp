@@ -1,13 +1,12 @@
 from connect import *
 
-def all_films():
+def showAll():
     try: 
-        dbCursor.execute("SELECT * FROM tblFilms")
-        allFilms = dbCursor.fetchall()
-
-        for film in allFilms: 
+        dbCursor.execute("SELECT * FROM tblFilms") # selects all data from tblFilms
+        allFilms = dbCursor.fetchall() # retrieves all selected rows/records
+        
+        for film in allFilms:
             print(film)
-
     except sql.OperationalError as e:
         print(f"failed because:  {e}")
 
@@ -15,20 +14,19 @@ def all_films():
         print(f"failed because of Programming Error:  {pe}")
 
     except sql.Error as er:
-        print(f"failed because Error:  {er}")
-
-def genre():
+        print(f"failed because Error:  {er}")  
+    
+def searchByGenre():
     try:
-        fgenre = (input("Search by film genre (case sensistive): "))
-        dbCursor.execute("SELECT * FROM tblFilms WHERE genre = ?", (fgenre,))
-
-        rows = dbCursor.fetchall() 
+        fGenre = input('Search by film genre (Case Sensitive): ')
+        dbCursor.execute("SELECT * FROM tblFilms WHERE genre = ?", (fGenre,))
+        rows = dbCursor.fetchall()
+        
         if not rows:
-            print("No films found with that genre")
+            print(f'No record with the genre {fGenre} exists in the table.')
         else:
             for row in rows:
                 print(row)
-    
     except sql.OperationalError as e:
         print(f"failed because:  {e}")
 
@@ -36,20 +34,19 @@ def genre():
         print(f"failed because of Programming Error:  {pe}")
 
     except sql.Error as er:
-        print(f"failed because Error:  {er}")
+        print(f"failed because Error:  {er}")  
 
-def year():
-    try:
-        fyear = int(input("Search by film year:  "))
+def searchByYear():
+    try: 
+        fyear = int(input("Search by year of release: "))
         dbCursor.execute("SELECT * FROM tblFilms WHERE yearReleased = ?", (fyear,))
-
-        rows = dbCursor.fetchall() 
+        rows = dbCursor.fetchall()
+        
         if not rows:
-            print("No films found within that year")
+            print(f'No record with the year of release {fyear} exists in the table.')
         else:
             for row in rows:
                 print(row)
-    
     except sql.OperationalError as e:
         print(f"failed because:  {e}")
 
@@ -57,20 +54,19 @@ def year():
         print(f"failed because of Programming Error:  {pe}")
 
     except sql.Error as er:
-        print(f"failed because Error:  {er}")
+        print(f"failed because Error:  {er}") 
 
-def rating():
+def searchByRating():
     try:
-        frating = (input("Search by film rating (case sensistive): "))
-        dbCursor.execute("SELECT * FROM tblFilms WHERE rating = ?", (frating,))
-
-        rows = dbCursor.fetchall() 
+        fRating = input('Search by film rating; U, PG, 12A, 12, 15, 18, R18 (Case Sensitive): ')
+        dbCursor.execute("SELECT * FROM tblFilms WHERE rating = ?", (fRating,))
+        rows = dbCursor.fetchall()
+        
         if not rows:
-            print("No films found with that rating")
+            print(f'No record with the rating {fRating} exists in the table.')
         else:
             for row in rows:
                 print(row)
-    
     except sql.OperationalError as e:
         print(f"failed because:  {e}")
 
@@ -79,13 +75,11 @@ def rating():
 
     except sql.Error as er:
         print(f"failed because Error:  {er}")
-
-
 if __name__ == "__main__":
-    all_films()
-    genre()
-    year()
-    rating()
+    showAll()
+    searchByGenre()
+    searchByYear()
+    searchByRating()
     
 
 
