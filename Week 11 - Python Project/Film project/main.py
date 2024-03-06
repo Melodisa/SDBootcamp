@@ -13,7 +13,7 @@ def films_menu():
     #see menuOptions.txt for reference. Create a list of string values/elements/items
     optionsList = ['1', '2', '3', '4', '5']
     #call the read file function and assign it to a variable called menuChoices
-    menuChoices = read_file("Week 11 - Pyhon Project/Film Project/Textfiles/Filmmenu.txt")
+    menuChoices = read_file("Week 11 - Python Project/Textfiles/Filmmenu.txt")
     
     #repeat the menu options until the option to exit the menu is entered
     while option not in optionsList:
