@@ -2,7 +2,7 @@ from connect import *
 
 def insert_films():
     try:
-        #Adding the film data
+        #Inserting the film data
         fTitle = input("Enter the film title: ")
         fReleaseYear = int(input("Enter the film's release year: "))
         fRating = input("Enter age rating for the film: ")
